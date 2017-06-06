@@ -3,10 +3,10 @@
 
 * Choose one of the following imports
 */
-/*@import 'node_modules/@angular/material/core/theming/prebuilt/deeppurple-amber.scss';*/
-@import 'node_modules/@angular/material/core/theming/prebuilt/indigo-pink.scss';
-/*@import 'node_modules/@angular/material/core/theming/prebuilt/pink-bluegrey.scss';*/
-/*@import 'node_modules/@angular/material/core/theming/prebuilt/purple-green.scss';*/
+@import 'node_modules/ontimize-web-ng2/ontimize/components/theming/indigo-pink.scss';
+// @import 'node_modules/ontimize-web-ng2/ontimize/components/theming/deeppurple-amber.scss';
+// @import 'node_modules/ontimize-web-ng2/ontimize/components/theming/pink-bluegrey.scss';
+// @import 'node_modules/ontimize-web-ng2/ontimize/components/theming/purple-green.scss';
 
 /*
 * Import custom theme
@@ -23,7 +23,7 @@
 /*
 * Propagate theme to screen styles definition.
 */
-@import '../../app/+login/login.theme.scss';
+@import '../../app/login/login.theme.scss';
 @include login-theme($theme);
 
 

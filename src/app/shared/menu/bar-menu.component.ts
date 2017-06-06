@@ -1,21 +1,20 @@
 import { Component, OnInit, NgZone, Inject } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { DialogService } from 'ontimize-web-ng2/ontimize';
+import { DialogService } from 'ontimize-web-ng2';
 
 @Component({
-  moduleId: module.id,
   selector: 'bar-menu',
-  templateUrl: 'bar-menu.component.html',
-  styleUrls: ['bar-menu.component.css']
+  templateUrl: './bar-menu.component.html',
+  styleUrls: ['./bar-menu.component.scss']
 })
 export class BarMenuComponent implements OnInit {
 
   constructor(
-    private router: Router, private actRoute: ActivatedRoute,
+    private router: Router,
+    private actRoute: ActivatedRoute,
     private zone: NgZone,
-    @Inject(DialogService) private dialogService: DialogService
-  ) {
+    @Inject(DialogService) private dialogService: DialogService) {
 
   }
 

@@ -1,0 +1,33 @@
+<div layout="row" layout-fill layout-align="center center" class="login-outer-container">
+
+  <div layout="column" layout-align="center" class="login-inner-container md-whiteframe-1dp">
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+      <div layout="column" layout-align="center center" class="logo-container md-whiteframe-4dp">
+        <img src="./assets/images/ontimize.png">
+      </div>
+
+      <p class="session-expired" *ngIf="sessionExpired">{{ 'ERROR_SESSION_EXPIRED' | oTranslate }}</p>
+
+      <md-input-container layout-fill>
+        <input mdInput class="mat-input" #user placeholder="{{ 'USERNAME' | oTranslate }}" id="username" formControlName="username">
+      </md-input-container>
+
+      <md-input-container layout-fill>
+        <input mdInput class="mat-input" #password placeholder="{{ 'PASSWORD' | oTranslate }}" id="password" type="password" formControlName="password">
+      </md-input-container>
+
+      <button md-raised-button color="primary" type="submit">{{ 'LOGIN' | oTranslate }}</button>
+      <div layout-padding></div>
+      <div layout-padding></div>
+      <div layout="column" layout-align="center center" layout-padding>
+        <span class="title_text">Use this user and password for login:</span>
+        <span class="dark_text">username : demo</span>
+        <span class="dark_text">password : demouser</span>
+      </div>
+    </form>
+
+  </div>
+
+</div>
