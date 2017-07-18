@@ -1,7 +1,75 @@
-.main-container {
-  position: absolute;
-    top: 64px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
+.vertical-padding-8 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.horizontal-padding-8 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.horizontal-container .o-container-content-item {
+  > .rounded-panel:first-child {
+    margin-right: 4px;
+  }
+  > .rounded-panel:last-child {
+    margin-left: 4px;
+  }
+}
+
+.margin-right-24 {
+  margin-right: 24px;
+}
+
+o-form {
+  o-form-toolbar.o-form-toolbar-floating {
+    top: 56px!important;
+    // right: 16px!important;
+    padding-top: 16px;
+    padding-bottom: 0px;
+    background: #eeeeee;
+  }
+  form {
+    top: 66px!important;
+  }
+}
+
+.o-app-sidenav .application-sidenav-container .mat-sidenav.application-sidenav-sidenav {
+  padding-top: 5px!important;
+}
+
+
+.mat-sidenav-closed {
+  o-app-sidenav-image .application-sidenav-image-container .application-sidenav-image {
+    margin-left:auto;
+    margin-right: -10px;
+  }
+}
+
+.o-table-column-centered {
+  text-align: center!important;
+}
+
+.line-chart .nv-x.nv-axis .nv-axisMaxMin.nv-axisMaxMin-x.nv-axisMin-x text {
+  transform: translate(0px, 0px) rotate(-90deg);
+}
+.line-chart .nv-x.nv-axis .nvd3 text {
+  transform-origin: left;
+  transform: translate(-10px, 0px) rotate(-90deg);
+}
+
+.nvd3 text {
+  font: 400 12px 'Lato';
+}
+
+.movement-types-cell-renderer {
+  font-weight: 700;
+}
+
+.display-none {
+  display: none;
+}
+
+.o-container-title-item.container-title {
+  padding-bottom: 2px;
 }
