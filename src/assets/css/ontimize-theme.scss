@@ -1,0 +1,240 @@
+@import 'node_modules/@angular/material/theming';
+
+@mixin ontimize-theme($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    // $warn: map-get($theme, warn);
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+
+    $container-background : #ffffff;
+    $border-radius: 6px;
+    $button-line-height: 30px;
+
+    $mat-font-family: 'Lato', sans-serif !default;
+    /*CONTAINER*/
+
+    .rounded-panel,
+    .standalone-form-container .o-form-content-wrapper,
+    .standalone-chart-container {
+        background:$container-background;
+        border-radius: $border-radius;
+    }
+
+    .standalone-chart-container {
+        margin-top: 48px;
+    }
+
+    .standalone-form-container {
+        .inner-form {
+            padding: 8px;
+        }
+        .o-form-content-wrapper {
+            margin-top: 32px;
+        }
+    }
+
+    /*APP LAYOUT*/
+    .application-layout-content-wrapper {
+        background: #eeeeee;
+    }
+
+    o-list-picker-dialog  md-toolbar  o-search-input {
+        span.icon-btn {
+            color:  mat-color($primary, default-contrast);
+        }
+        &.list-picker-search .mat-input-underline {
+            border-color: mat-color($primary, default-contrast, 0.78);
+            .mat-input-ripple {
+                background-color: mat-color($primary, default-contrast);
+            }
+        }
+    }
+
+    span {
+        font-family: 'Lato', sans-serif!important;
+    }
+
+    /*APP SIDENAV*/
+    .o-app-sidenav {
+        font-family: 'Lato', sans-serif!important;
+        font-weight: 400;
+        color: #aaaaaa;
+    }
+
+    /*USER INFO*/
+    o-app-header .application-header-title,
+    o-user-info {
+        font-family: 'Lato', sans-serif;
+        font-weight: 700;
+    }
+
+    /*FORM*/
+    o-form-toolbar {
+
+        padding: 0 16px;
+
+        .mat-toolbar{
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.24);
+            background:$container-background;
+            border-radius: $border-radius;
+            min-height: initial;
+
+            button.mat-button {
+                color: mat-color($foreground, secondary-text);
+                md-icon {
+                    color: mat-color($foreground, secondary-text);
+                }
+                border: 1px solid mat-color($primary);
+                border-radius: $border-radius;
+                margin: 0 8px;
+                line-height: $button-line-height;
+            }
+        }
+    }
+
+    /*TABS*/
+    .mat-tab-group {
+
+        .mat-tab-header {
+            border: none;
+
+            .mat-tab-label-container .mat-tab-label {
+                border-top-left-radius: $border-radius;
+                border-top-right-radius: $border-radius;
+                background: #dcdcdc;
+                opacity: .8;
+                &.mat-tab-label-active {
+                    background: $container-background;
+                    opacity: 1;
+                }
+            }
+        }
+
+        .mat-tab-body-wrapper {
+            background : $container-background;
+            border-radius: $border-radius;
+            border-top-left-radius: 0px;
+        }
+
+        md-ink-bar {
+            display : none;
+        }
+    }
+
+    /*CONTAINERS*/
+
+    o-column,
+    o-row {
+        .o-container {
+            .container-title {
+                border-bottom-width: 2px;
+                border-bottom-color: mat-color($primary);
+
+                span {
+                    font-weight: 400;
+                }
+            }
+            .container-content {
+                padding: 24px 30px 8px 30px;
+            }
+        }
+    }
+
+    /*TABLE*/
+    .o-table-wrapper {
+        margin-top: 16px;
+        background : $container-background;
+        border-radius: $border-radius;
+    }
+
+    o-table.o-table {
+        font-family: 'Lato', sans-serif;
+        font-weight: 400;
+
+        .o-table-container .dt-buttons {
+
+            .dt-button.custom-generic-action::after,
+            .dt-button.generic-action.generic-action::before {
+                line-height: $button-line-height;
+                padding: 0 8px;
+            }
+
+            .dt-button.generic-action > span,
+            .dt-button.custom-generic-action > span {
+                line-height: $button-line-height;
+            }
+
+            a:not(.hidden-action-text),
+            a:not(.hidden-action-text):not(.disabled):hover {
+                border: 1px solid mat-color($primary);
+                border-radius: $border-radius;
+                margin: 0 8px;
+            }
+
+        }
+
+        .expandable-container {
+            border: none;
+        }
+
+        .o-table-container table {
+            margin-top: 16px;
+            margin-bottom: 16px;
+
+
+            thead tr th {
+                font-weight: 700;
+                font-size: 24px;
+            }
+
+            thead th,
+            tbody td {
+                border-bottom: 1px solid mat-color($foreground, divider);
+            }
+
+            thead tr th:first-child:not(.o-table-column-select-checkbox),
+            tbody td:first-child:not(.o-table-column-action):not(.o-table-column-select-checkbox) {
+                border-right: none;
+            }
+
+            thead tr th:last-child:not(.o-table-column-action),
+            thead tr th:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action),
+            tbody td:last-child:not(.o-table-column-action),
+            tbody td:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action) {
+                border-left: none;
+            }
+
+
+
+            tbody tr.even,
+            thead tr {
+                background-color: initial;
+            }
+
+            thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
+            tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
+                background-color: mat-color($accent);
+            }
+
+
+            thead tr th.sorting::before,
+            thead tr th.sorting_asc::before,
+            thead tr th.sorting_desc::before,
+            thead tr th.sorting_asc_disabled::before,
+            thead tr th.sorting_desc_disabled::before {
+                margin-top: 4px;
+            }
+
+            thead tr th.sorting::after,
+            thead tr th.sorting_asc::after,
+            thead tr th.sorting_desc::after,
+            thead tr th.sorting_asc_disabled::after,
+            thead tr th.sorting_desc_disabled::after {
+                margin-top: 4px;
+            }
+        }
+
+    }
+
+}

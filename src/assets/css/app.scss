@@ -13,6 +13,8 @@
 */
 @import 'my-custom-app-theme.scss';
 
+@import 'ontimize-theme.scss';
+@include ontimize-theme($theme);
 
 /*
 * After define theme, it is necessary to transfer color to Ontimize Web framework
