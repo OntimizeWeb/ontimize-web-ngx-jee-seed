@@ -8,6 +8,10 @@
   padding-right: 8px;
 }
 
+.display-none {
+  display: none;
+}
+
 .horizontal-container .o-container-content-item {
   > .rounded-panel:first-child {
     margin-right: 4px;
@@ -24,7 +28,6 @@
 o-form {
   o-form-toolbar.o-form-toolbar-floating {
     top: 56px!important;
-    // right: 16px!important;
     padding-top: 16px;
     padding-bottom: 0px;
     background: #eeeeee;
@@ -56,18 +59,6 @@ o-form {
 .line-chart .nv-x.nv-axis .nvd3 text {
   transform-origin: left;
   transform: translate(-10px, 0px) rotate(-90deg);
-}
-
-.nvd3 text {
-  font: 400 12px 'Lato';
-}
-
-.movement-types-cell-renderer {
-  font-weight: 700;
-}
-
-.display-none {
-  display: none;
 }
 
 .o-container-title-item.container-title {
