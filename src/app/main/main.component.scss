@@ -64,3 +64,21 @@ o-form {
 .o-container-title-item.container-title {
   padding-bottom: 2px;
 }
+
+.o-form-content-wrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  max-width: 100%;
+  place-content: stretch flex-start;
+  align-items: stretch;
+  -webkit-box-pack: start;
+  -webkit-box-align: stretch;
+}
+
+.image-avatar {
+  width: 32px!important;
+  height: 32px!important;
+}
