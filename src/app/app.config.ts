@@ -5,7 +5,8 @@ import { MENU_CONFIG } from './shared/app.menu.config';
 
 export const CONFIG: Config = {
   // The base path of the URL used by app services.
-  apiEndpoint: 'https://try.ontimize.com/QSAllComponents-jee/services/rest',
+  // apiEndpoint: 'https://try.ontimize.com/QSAllComponents-jee/services/rest',
+  apiEndpoint: 'http://10.7.0.214:9080/qsallcomponents-jee/services/rest',
 
   // Application identifier. Is the unique package identifier of the app.
   // It is used when storing or managing temporal data related with the app.
