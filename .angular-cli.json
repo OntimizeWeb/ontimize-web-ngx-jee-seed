@@ -20,7 +20,7 @@
       "prefix": "app",
       "styles": [
         "../node_modules/ontimize-web-ng2/ontimize.scss",
-        "assets/css/loader.scss",
+        "../node_modules/flag-icon-css/sass/_flag-icon.scss",
         "assets/css/app.scss",
         "styles.css"
       ],
