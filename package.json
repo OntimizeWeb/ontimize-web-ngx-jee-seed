@@ -1,6 +1,6 @@
 {
   "name": "ontimize-web-ng2-jee-seed",
-  "version": "2.0.0-rc.0",
+  "version": "2.0.0-rc.1",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
@@ -15,22 +15,23 @@
   },
   "private": true,
   "dependencies": {
-    "ontimize-web-ng2": "2.0.0-rc.6",
-    "@angular/material": "2.0.0-beta.7",
-    "@angular/flex-layout": "^2.0.0-beta.8",
-    "@angular/animations": "4.2.4",
-    "@angular/common": "4.2.4",
-    "@angular/compiler": "4.2.4",
-    "@angular/core": "4.2.4",
-    "@angular/forms": "4.2.4",
-    "@angular/http": "4.2.4",
-    "@angular/platform-browser": "4.2.4",
-    "@angular/platform-browser-dynamic": "4.2.4",
-    "@angular/platform-server": "4.2.4",
-    "@angular/router": "4.2.4",
-    "@angular/upgrade": "4.2.4",
-    "@ngx-translate/core": "7.0.0",
-    "@ngx-translate/http-loader": "0.1.0",
+    "ontimize-web-ng2": "2.0.0-rc.7",
+    "@angular/material": "2.0.0-beta.8",
+    "@angular/flex-layout": "2.0.0-beta.8",
+    "@angular/animations": "4.3.3",
+    "@angular/cdk": "2.0.0-beta.8",
+    "@angular/common": "4.3.3",
+    "@angular/compiler": "4.3.3",
+    "@angular/core": "4.3.3",
+    "@angular/forms": "4.3.3",
+    "@angular/http": "4.3.3",
+    "@angular/platform-browser": "4.3.3",
+    "@angular/platform-browser-dynamic": "4.3.3",
+    "@angular/platform-server": "4.3.3",
+    "@angular/router": "4.3.3",
+    "@angular/upgrade": "4.3.3",
+    "@ngx-translate/core": "7.1.0",
+    "@ngx-translate/http-loader": "1.0.2",
     "core-js": "^2.4.1",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.12",
@@ -38,8 +39,8 @@
     "typescript": "2.3.4"
   },
   "devDependencies": {
-    "@angular/cli": "^1.2.1",
-    "@angular/compiler-cli": "4.2.4",
+    "@angular/cli": "1.2.7",
+    "@angular/compiler-cli": "4.3.3",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
     "codelyzer": "3.1.1",
@@ -55,6 +56,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
-    "tslint": "5.2.0"
+    "tslint": "5.2.0",
+    "webpack": "2.3.1"
   }
 }
