@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "declaration": true,
+    "sourceMap": true,
+    "inlineSources": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "skipLibCheck": true,
+    "lib": [
+      "dom",
+      "es6"
+    ],
+    "typeRoots": [
+      "node_modules/@types/"
+    ]
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+
+  "exclude": [
+    "node_modules/**/*",
+    "src/test.ts",
+    "src/**/*.spec.ts",
+    "src/**/*.d.ts",
+    "src/*-aot.ts",
+    "src/main.ts",
+    "src/polyfills.ts"
+  ],
+  // "files": [
+  //   "app/app.module.ts",
+  //   "main.ts"
+  // ],
+  "angularCompilerOptions": {
+    "genDir": ".",
+    "entryModule": "app/app.module#AppModule",
+    "skipMetadataEmit": true
+  }
+}
