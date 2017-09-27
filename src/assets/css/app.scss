@@ -13,8 +13,6 @@
 // @import 'node_modules/ontimize-web-ngx-theming/src/themes/o-purple-green.scss';
 @import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
 
-@import 'ontimize-theme.scss';
-@include ontimize-theme($theme);
 
 /*
 * After define theme, it is necessary to transfer color to Ontimize Web framework

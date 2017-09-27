@@ -13,9 +13,6 @@ const config = {
     polyfills: helpers.root('src/polyfills.ts'),
     vendor: helpers.root('src/vendor-aot.ts'),
     scripts: [
-      helpers.root('node_modules/jquery/dist/jquery.js'),
-      helpers.root('node_modules/colresizable/colResizable-1.6.min.js'),
-      helpers.root('node_modules/pdfmake/build/vfs_fonts.js'),
       helpers.root('src/assets/js/domchange.js'),
       helpers.root('src/assets/js/keyboard.js')
     ]
