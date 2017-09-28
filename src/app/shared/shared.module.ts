@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { OntimizeWebModule } from 'ontimize-web-ng2';
+import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { CommonModule } from '@angular/common';
 
 @NgModule({

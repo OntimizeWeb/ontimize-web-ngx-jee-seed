@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "ontimize-web-ng2-jee-seed"
+    "name": "ontimize-web-ngx-jee-seed"
   },
   "apps": [
     {
@@ -19,17 +19,12 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "../node_modules/ontimize-web-ng2/ontimize.scss",
+        "../node_modules/ontimize-web-ngx/ontimize.scss",
         "../node_modules/flag-icon-css/sass/_flag-icon.scss",
         "assets/css/app.scss",
-        "styles.css"
+        "styles.scss"
       ],
       "scripts": [
-        "../node_modules/jquery/dist/jquery.js",
-        "../node_modules/jquery-ui/ui/widgets/datepicker.js",
-        "../node_modules/colresizable/colResizable-1.6.min.js",
-        "../node_modules/pdfmake/build/pdfmake.js",
-        "../node_modules/pdfmake/build/vfs_fonts.js",
         "assets/js/domchange.js",
         "assets/js/keyboard.js"
       ],
