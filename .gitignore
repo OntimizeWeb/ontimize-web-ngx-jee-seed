@@ -3,6 +3,11 @@
 # compiled output
 /dist
 /tmp
+/tmp-src
+*.ngfactory.ts
+*.ngsummary.json
+*.ngstyle.ts
+*.d.ts
 
 # dependencies
 /node_modules
