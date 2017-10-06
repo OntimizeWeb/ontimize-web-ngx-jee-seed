@@ -124,16 +124,11 @@ function getLoadChildrenIndexes(content) {
 
     indexes.push({
       loadChildPos: moduleFnCallPos,
-      // fnStartDefPos: fnDefStartIdx,
-      // fnEndDefPos: fnDefEndIdx,
       moduleFnDef: moduleFnDef,
       moduleFn: moduleFn,
       moduleName: moduleName,
       modulePath: modulePath,
       importDef: importDef
-      // ,
-      // importStartPos: importStartIdx,
-      // importEndPos: importEndIdx
     });
     startIndex = moduleFnCallPos;
   }
@@ -164,12 +159,6 @@ gulp.task('clean:aot', (cb) => {
     cb(error);
   });
 });
-
-// gulp.task('clean:aot', (cb) => {
-//   exec('rimraf src/app/**/*.ngfactory.ts && rimraf src/app/**/*.ngsummary.json && rimraf src/app/**/*.ngstyle.ts && rimraf src/app/**/*.d.ts', function (error, stdout, stderr) {
-//     cb(error);
-//   });
-// });
 
 /**
  * Functions
