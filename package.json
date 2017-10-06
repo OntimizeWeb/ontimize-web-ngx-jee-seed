@@ -11,8 +11,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "production": "npm run clean && ng build --aot=false --target -prod",
-    "production-aot": "gulp aot"
+    "production": "ng build --aot=false --target -prod",
+    "production-aot": "gulp production-aot"
   },
   "private": true,
   "dependencies": {

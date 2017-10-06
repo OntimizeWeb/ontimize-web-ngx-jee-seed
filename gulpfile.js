@@ -9,7 +9,7 @@ var change = require('gulp-change');
  */
 gulp.task('compile-aot', gulpSequence('clean', 'copy:tasks', 'aot:compile'));
 
-gulp.task('aot', gulpSequence('compile-aot', 'aot:bundle', 'styles', 'clean:aot'));
+gulp.task('production-aot', gulpSequence('compile-aot', 'aot:bundle', 'styles', 'clean:aot'));
 
 gulp.task('aot:compile', (cb) => {
   exec('node_modules\\.bin\\ngc -p tsconfig.aot.json', function (error, stdout, stderr) {
@@ -46,27 +46,19 @@ gulp.task('copy:main:aot', function () {
   return gulp.src('./aot-config/main-aot.ts').pipe(gulp.dest('./tmp-src'));
 });
 
-// gulp.task('remove:main:aot', function () {
-//   exec('rimraf ./src/main-aot.ts');
-// });
-
-// gulp.task('copy:routing', function () {
-//  return gulp.src('./src/**/*-routing.module.ts')
-//     .pipe(gulp.dest('./temp-routing/'));
-// });
-
+/**
+ * Routing modules tasks
+ */
 gulp.task('modify:routing', function () {
   return gulp.src('./tmp-src/**/*-routing.module.ts')
-    .pipe(change(performChange))
-    // .pipe(gulp.dest('./temp-routing2'));
+    .pipe(change(processFile))
     .pipe(gulp.dest('./tmp-src'));
 });
 
-function performChange(content, done) {
+function processFile(content, done) {
   var indexes = getLoadChildrenIndexes(content);
   if (indexes.length) {
     var ordered = indexes.sort(compareByProp('loadChildPos'));
-    console.log(ordered);
     content = replaceLoadChildren(content, ordered);
     content = deleteDefsAndImports(content, ordered);
   }
@@ -74,7 +66,7 @@ function performChange(content, done) {
 }
 
 function replaceLoadChildren(content, array) {
-  for (var i = 0, len = array.length; i < len; i++) {
+  for (var i = array.length - 1; i >= 0; i--) {
     var curr = array[i];
     var newStr = '\'' + curr.modulePath + '#' + curr.moduleName + '\'';
     var endIdx = content.substring(curr.loadChildPos, content.length).indexOf(curr.moduleFn);
@@ -96,15 +88,17 @@ function deleteDefsAndImports(content, array) {
 
 function getLoadChildrenIndexes(content) {
   var startIndex = 0, index, indexes = [];
-  var floadChildrenStr = 'loadChildren:';
+  var loadChildrenStr = 'loadChildren:';
   var returnStr = 'return ';
   var fromStr = 'from ';
-  while ((index = content.indexOf(floadChildrenStr, startIndex)) > -1) {
-    var moduleFnCallPos = index + floadChildrenStr.length;
+  while ((index = content.indexOf(loadChildrenStr, startIndex)) > -1) {
+    var moduleFnCallPos = index + loadChildrenStr.length;
     var moduleFn, moduleFnDef, moduleName, modulePath;
     var fnDefStartIdx, fnDefEndIdx, importStartIdx, importEndIdx, importDef;
 
-    var endFnNameIdx = content.indexOf(' ', moduleFnCallPos + 1);
+    var nextSpaceIdx = content.indexOf(' ', moduleFnCallPos + 1);
+    var nextCommaIdx = content.indexOf(',', moduleFnCallPos + 1);
+    var endFnNameIdx = Math.min(nextSpaceIdx, nextCommaIdx);
 
     moduleFn = content.substring(moduleFnCallPos, endFnNameIdx).trim();
     if (moduleFn && moduleFn.length) {
@@ -155,10 +149,6 @@ function compareByProp(property) {
     return 0;
   }
 }
-
-
-
-
 
 /**
  * Cleaning tasks
