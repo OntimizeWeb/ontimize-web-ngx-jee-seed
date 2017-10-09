@@ -8,6 +8,7 @@
 *.ngsummary.json
 *.ngstyle.ts
 *.d.ts
+/aot-config/*_original.*
 
 # dependencies
 /node_modules
