@@ -108,14 +108,19 @@ const config = {
       test: /\.js$|\.html$/,
       threshold: 10240,
       minRatio: 0.8
-  }),
+    }),
 
     new GlobCopyWebpackPlugin({
       "patterns": [
         "assets/css/loader.css",
         "assets/i18n",
         "assets/images",
-        "favicon.ico"
+        "favicon.ico",
+        {
+          "glob": "**/*",
+          "input": "../node_modules/flag-icon-css/flags/",
+          "output": "./assets/flags"
+        }
       ],
       "globOptions": {
         "cwd": path.join(process.cwd(), "src"),
