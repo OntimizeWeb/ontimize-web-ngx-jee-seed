@@ -6,16 +6,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 const ngToolsWebpack = require('@ngtools/webpack');
 const { GlobCopyWebpackPlugin } = require('@angular/cli/plugins/webpack');
+const CompressionPlugin = require("compression-webpack-plugin");
 
 const config = {
   entry: {
-    main: helpers.root('src/main-aot.ts'),
-    polyfills: helpers.root('src/polyfills.ts'),
-    vendor: helpers.root('src/vendor-aot.ts'),
-    scripts: [
-      helpers.root('src/assets/js/domchange.js'),
-      helpers.root('src/assets/js/keyboard.js')
-    ]
+    main: helpers.root('tmp-src/main-aot.ts'),
+    polyfills: helpers.root('tmp-src/polyfills.ts'),
+    vendor: helpers.root('tmp-src/vendor-aot.ts'),
+    scripts: APP_SCRIPTS
   },
 
   output: {
@@ -69,11 +67,11 @@ const config = {
 
     new ngToolsWebpack.AotPlugin({
       tsConfigPath: helpers.root('tsconfig.aot.json'),
-      entryModule: helpers.root('src/app/app.module#AppModule')
+      entryModule: helpers.root('tmp-src/app/app.module#AppModule')
     }),
 
     new HtmlWebpackPlugin({
-      template: helpers.root('config/index.ejs')
+      template: helpers.root('aot-config/index.ejs')
     }),
 
     new webpack.optimize.UglifyJsPlugin({
@@ -101,12 +99,25 @@ const config = {
       }
     }),
 
+    new CompressionPlugin({
+      asset: "[path].gz[query]",
+      algorithm: "gzip",
+      test: /\.js$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8
+    }),
+
     new GlobCopyWebpackPlugin({
       "patterns": [
         "assets/css/loader.css",
         "assets/i18n",
         "assets/images",
-        "favicon.ico"
+        "favicon.ico",
+        {
+          "glob": "**/*",
+          "input": "../node_modules/flag-icon-css/flags/",
+          "output": "./assets/flags"
+        }
       ],
       "globOptions": {
         "cwd": path.join(process.cwd(), "src"),

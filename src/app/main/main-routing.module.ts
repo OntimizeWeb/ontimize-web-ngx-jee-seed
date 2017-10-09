@@ -12,7 +12,7 @@ export function loadHomeModule() {
 
 export const routes: Routes = [
   {
-    path: 'main',
+    path: '',
     component: MainComponent,
     canActivate: [AuthGuardService],
     children: [

@@ -1,22 +1,17 @@
 {
   "name": "ontimize-web-ngx-jee-seed",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 4299",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "clean:aot": "rimraf src/app/**/*.ngfactory.ts && rimraf src/app/**/*.ngsummary.json && rimraf src/app/**/*.ngstyle.ts && rimraf src/app/**/*.d.ts",
-    "clean": "rimraf dist && npm run clean:aot",
-    "production": "npm run clean && ng build --aot=false --target -prod",
-    "aot": "npm run clean:all && npm run aot:compile && npm run aot:bundle && npm run styles",
-    "aot:compile": "node_modules/.bin/ngc -p tsconfig.aot.json",
-    "aot:bundle": "webpack --config config/webpack-aot.config.js --bail",
-    "styles": "node-sass src/styles-aot.scss dist/assets/css/app.css --output-style compressed"
+    "production": "ng build --aot=false --target -prod",
+    "production-aot": "ontimize-web-ngx production-aot --href /ontimize-web-ngx-jee-seed/"
   },
   "private": true,
   "dependencies": {
@@ -46,11 +41,13 @@
     "zone.js": "^0.8.12"
   },
   "devDependencies": {
+    "ontimize-web-ngx-tools": "1.0.0",
     "@angular/cli": "1.3.2",
     "@angular/compiler-cli": "4.3.6",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
     "codelyzer": "3.1.1",
+    "compression-webpack-plugin": "1.0.0",
     "flag-icon-css": "^2.8.0",
     "hammerjs": "2.0.8",
     "jasmine-core": "~2.5.2",
@@ -67,6 +64,8 @@
     "ts-node": "~2.0.0",
     "tslint": "5.2.0",
     "html-loader": "0.4.x",
-    "webpack": "2.3.1"
+    "gulp": "^3.9.1",
+    "gulp-sequence": "0.4.6",
+    "gulp-change": "1.0.0"
   }
 }

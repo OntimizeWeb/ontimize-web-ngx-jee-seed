@@ -1,8 +1,20 @@
 import { NgModule, NgModuleFactory } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginModule } from './login/login.module';
+import { MainModule } from './main/main.module';
+
+export function loadLoginModule() {
+  return LoginModule;
+}
+
+export function loadMainModule() {
+  return MainModule;
+}
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'main', pathMatch: 'prefix' }
+  { path: 'main', loadChildren: loadMainModule },
+  { path: 'login', loadChildren: loadLoginModule },
+  { path: '', redirectTo: 'main', pathMatch: 'full' }
 ];
 
 const opt = {

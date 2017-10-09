@@ -21,22 +21,18 @@
     ]
   },
   "include": [
-    "src/**/*.ts"
+    "tmp-src/**/*.ts"
   ],
 
   "exclude": [
     "node_modules/**/*",
-    "src/test.ts",
-    "src/**/*.spec.ts",
-    "src/**/*.d.ts",
-    "src/*-aot.ts",
-    "src/main.ts",
-    "src/polyfills.ts"
+    "tmp-src/test.ts",
+    "tmp-src/**/*.spec.ts",
+    "tmp-src/**/*.d.ts",
+    "tmp-src/*-aot.ts",
+    "tmp-src/main.ts",
+    "tmp-src/polyfills.ts"
   ],
-  // "files": [
-  //   "app/app.module.ts",
-  //   "main.ts"
-  // ],
   "angularCompilerOptions": {
     "genDir": ".",
     "entryModule": "app/app.module#AppModule",
