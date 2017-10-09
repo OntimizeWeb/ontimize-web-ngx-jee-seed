@@ -13,10 +13,7 @@ const config = {
     main: helpers.root('tmp-src/main-aot.ts'),
     polyfills: helpers.root('tmp-src/polyfills.ts'),
     vendor: helpers.root('tmp-src/vendor-aot.ts'),
-    scripts: [
-      helpers.root('tmp-src/assets/js/domchange.js'),
-      helpers.root('tmp-src/assets/js/keyboard.js')
-    ]
+    scripts: APP_SCRIPTS
   },
 
   output: {
