@@ -1,26 +1,32 @@
 const helpers = require('./helpers');
-const path = require('path');
-const webpack = require('webpack');
-const ProgressPlugin = require('webpack/lib/ProgressPlugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
-const ngToolsWebpack = require('@ngtools/webpack');
-const { GlobCopyWebpackPlugin } = require('@angular/cli/plugins/webpack');
-const CompressionPlugin = require("compression-webpack-plugin");
+var path = require('path');
+var webpack = require('webpack');
 
-const config = {
+// Webpack Plugins
+const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+const ModuleConcatenationPlugin = webpack.optimize.ModuleConcatenationPlugin;
+const NoEmitOnErrorsPlugin = webpack.NoEmitOnErrorsPlugin;
+const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CompressionPlugin = require("compression-webpack-plugin");
+const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
+const ProgressPlugin = require('webpack/lib/ProgressPlugin');
+const { GlobCopyWebpackPlugin } = require('@angular/cli/plugins/webpack');
+
+module.exports = {
+
   entry: {
-    main: helpers.root('tmp-src/main-aot.ts'),
+    main: helpers.root('tmp-src/main.ts'),
     polyfills: helpers.root('tmp-src/polyfills.ts'),
-    vendor: helpers.root('tmp-src/vendor-aot.ts'),
-    scripts: APP_SCRIPTS
+    vendor: helpers.root('tmp-src/vendor-aot.ts')
   },
 
   output: {
     path: helpers.root('dist'),
     filename: '[name].[chunkhash].bundle.js',
     sourceMapFilename: '[name].[chunkhash].bundle.map',
-    chunkFilename: '[id].[chunkhash].chunk.js'
+    // chunkFilename: '[id].[chunkhash].chunk.js',
+    chunkFilename: '[name].[chunkhash].chunk.js'
   },
 
   resolve: {
@@ -34,15 +40,36 @@ const config = {
       { test: /\.scss$/, loaders: ['raw-loader', 'sass-loader'] }
     ]
   },
-  plugins: [
-    new ProgressPlugin(),
 
-    new webpack.optimize.CommonsChunkPlugin({
-      name: ['main', 'scripts', 'vendor', 'polyfills']
+  plugins: [
+
+    new NoEmitOnErrorsPlugin(),
+
+    new GlobCopyWebpackPlugin({
+      "patterns": [
+        "assets/css/loader.css",
+        "assets/i18n",
+        "assets/images",
+        "favicon.ico"
+      ],
+      "globOptions": {
+        "cwd": path.join(process.cwd(), "src"),
+        "dot": true,
+        "ignore": "**/.gitkeep"
+      }
     }),
 
+    new ProgressPlugin(),
+
     new CommonsChunkPlugin({
-      "name": ["inline"],
+      name: ['main', 'vendor', 'polyfills']
+    }),
+    // , 'scripts'
+
+    new CommonsChunkPlugin({
+      "name": [
+        "inline"
+      ],
       "minChunks": null
     }),
 
@@ -51,30 +78,36 @@ const config = {
       minChunks: function (module) {
         return module.context && module.context.indexOf("node_modules") !== -1;
       },
-      "chunks": ["main"]
+      "chunks": [
+        "main"
+      ]
     }),
 
-    new webpack.optimize.CommonsChunkPlugin({
+    new CommonsChunkPlugin({
       name: "manifest",
       minChunks: Infinity
     }),
 
-    new webpack.optimize.CommonsChunkPlugin({
-      "name": ["main"],
+    new CommonsChunkPlugin({
+      "name": [
+        "main"
+      ],
       "minChunks": 2,
       "async": "common"
     }),
 
-    new ngToolsWebpack.AotPlugin({
-      tsConfigPath: helpers.root('tsconfig.aot.json'),
-      entryModule: helpers.root('tmp-src/app/app.module#AppModule')
+    new AngularCompilerPlugin({
+      mainPath: helpers.root('tmp-src/main.ts'),
+      tsConfigPath: helpers.root('tsconfig.aot.json')
     }),
 
     new HtmlWebpackPlugin({
       template: helpers.root('aot-config/index.ejs')
     }),
 
-    new webpack.optimize.UglifyJsPlugin({
+    new ModuleConcatenationPlugin(),
+
+    new UglifyJsPlugin({
       comments: false,
       beautify: false,
       output: {
@@ -105,27 +138,6 @@ const config = {
       test: /\.js$|\.html$/,
       threshold: 10240,
       minRatio: 0.8
-    }),
-
-    new GlobCopyWebpackPlugin({
-      "patterns": [
-        "assets/css/loader.css",
-        "assets/i18n",
-        "assets/images",
-        "favicon.ico",
-        {
-          "glob": "**/*",
-          "input": "../node_modules/flag-icon-css/flags/",
-          "output": "./assets/flags"
-        }
-      ],
-      "globOptions": {
-        "cwd": path.join(process.cwd(), "src"),
-        "dot": true,
-        "ignore": "**/.gitkeep"
-      }
     })
   ]
 };
-
-module.exports = config;
