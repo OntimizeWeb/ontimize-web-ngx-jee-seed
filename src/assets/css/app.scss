@@ -21,20 +21,3 @@
 // Propagate theme to screen styles definition.
 @import '../../app/login/login.theme.scss';
 @include login-theme($theme);
-
-/*
-* Other app styles
-*/
-
-.no-padding {
-  padding: 0 !important;
-}
-
-.customer-picture {
-  .input-image {
-    .input-image-preview {
-      width: 200px;
-      height: 200px;
-    }
-  }
-}
