@@ -9,7 +9,6 @@ export function loadHomeModule() {
   return HomeModule;
 }
 
-
 export const routes: Routes = [
   {
     path: '',

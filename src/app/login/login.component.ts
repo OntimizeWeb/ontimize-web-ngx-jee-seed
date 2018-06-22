@@ -1,9 +1,9 @@
-import { Component, OnInit, Inject, NgZone, Injector } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, Inject, Injector, NgZone, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
-import { LoginService, NavigationService, APP_CONFIG, Config } from 'ontimize-web-ngx';
+import { APP_CONFIG, Config, LoginService, NavigationService } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'login',
@@ -25,8 +25,8 @@ export class LoginComponent implements OnInit {
     router: Router,
     @Inject(NavigationService) public navigation: NavigationService,
     @Inject(LoginService) private loginService: LoginService,
-    public injector: Injector) {
-
+    public injector: Injector
+  ) {
     this.router = router;
 
     const qParamObs: Observable<any> = this.actRoute.queryParams;
@@ -40,7 +40,6 @@ export class LoginComponent implements OnInit {
         }
       }
     });
-
   }
 
   ngOnInit(): any {
@@ -60,7 +59,6 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-
     if (!this.loginForm.valid) {
       alert('Campos no válidos');
     }
