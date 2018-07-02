@@ -35,4 +35,3 @@ export const customProviders: any = [
   ],
 })
 export class AppModule { }
-
