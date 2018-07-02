@@ -1,9 +1,9 @@
-import { Component, Inject, Injector, NgZone, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit, Inject, NgZone, Injector } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
-import { APP_CONFIG, Config, LoginService, NavigationService } from 'ontimize-web-ngx';
+import { LoginService, NavigationService, APP_CONFIG, Config } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'login',
@@ -25,8 +25,8 @@ export class LoginComponent implements OnInit {
     router: Router,
     @Inject(NavigationService) public navigation: NavigationService,
     @Inject(LoginService) private loginService: LoginService,
-    public injector: Injector
-  ) {
+    public injector: Injector) {
+
     this.router = router;
 
     const qParamObs: Observable<any> = this.actRoute.queryParams;
@@ -40,10 +40,11 @@ export class LoginComponent implements OnInit {
         }
       }
     });
+
   }
 
   ngOnInit(): any {
-    this.removeSessionToken();
+    this.loginService.sessionExpired();
     this.navigation.setVisible(false);
 
     const userCtrl: FormControl = new FormControl('', Validators.required);
@@ -67,11 +68,10 @@ export class LoginComponent implements OnInit {
     const password = this.loginForm.value['password'];
     if (userName && userName.length > 0 && password && password.length > 0) {
       const self = this;
-      this.loginService.login(userName, password)
-        .subscribe(() => {
-          self.sessionExpired = false;
-          self.router.navigate(['../'], { relativeTo: this.actRoute });
-        }, this.handleError);
+      this.loginService.login(userName, password).subscribe(() => {
+        self.sessionExpired = false;
+        self.router.navigate(['../'], { relativeTo: this.actRoute });
+      }, this.handleError);
     }
   }
 
@@ -83,11 +83,4 @@ export class LoginComponent implements OnInit {
       default: break;
     }
   }
-
-  removeSessionToken() {
-    const appConf: Config = this.injector.get(APP_CONFIG);
-    const token = appConf.uuid;
-    localStorage.setItem(token, JSON.stringify({}));
-  }
-
 }
