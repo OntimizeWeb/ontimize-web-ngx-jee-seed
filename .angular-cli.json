@@ -9,6 +9,7 @@
       "outDir": "dist",
       "assets": [
         "assets",
+        { "glob": "**/*", "input": "../node_modules/ontimize-web-ngx/assets/", "output": "./assets/" },
         "favicon.ico"
       ],
       "index": "index.html",
@@ -20,7 +21,6 @@
       "prefix": "app",
       "styles": [
         "../node_modules/ontimize-web-ngx/ontimize.scss",
-        "../node_modules/flag-icon-css/sass/flag-icon.scss",
         "assets/css/app.scss",
         "styles.scss"
       ],
