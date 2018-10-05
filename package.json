@@ -1,6 +1,6 @@
 {
   "name": "ontimize-web-ngx-jee-seed",
-  "version": "3.0.2",
+  "version": "3.1.1",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
@@ -29,8 +29,8 @@
     "@ngx-translate/core": "9.1.1",
     "@ngx-translate/http-loader": "2.0.1",
     "core-js": "2.5.3",
-    "ontimize-web-ngx": "3.0.0-rc.1",
-    "ontimize-web-ngx-theming": "1.1.1",
+    "ontimize-web-ngx": "3.1.1",
+    "ontimize-web-ngx-theming": "1.2.0",
     "reflect-metadata": "0.1.12",
     "rxjs": "5.5.6",
     "zone.js": "0.8.20"
