@@ -4,10 +4,11 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
+    "xxx": "rimraf node_modules/ontimize-web-ngx* && npm install",
     "ng": "ng",
     "start": "ng serve --port 4299",
     "production": "ng build --aot=false --target -prod",
-    "production-aot": "ontimize-web-ngx production-aot --href /ontimize-web-ngx-jee-seed/"
+    "production-aot": "ontimize-web-ngx production-aot --project-name ontimize-web-ngx-jee-seed --href /ontimize-web-ngx-jee-seed/"
   },
   "private": true,
   "dependencies": {
@@ -32,23 +33,23 @@
     "rxjs": "6.3.3",
     "zone.js": "0.8.26",
     "reflect-metadata": "0.1.12",
-    "ontimize-web-ngx": "C:\\Users\\patricia.martinez\\Documents\\ontimize web\\ontimize-web-ngx-angular6\\dist\\ontimize-web-ngx-4.0.0-rc.0.tgz",
-    "ontimize-web-ngx-theming": "1.1.2"
+    "ontimize-web-ngx": "file:C:\\workspace\\github\\ontimize-web-ng2-VERSIONS\\4.0.0-rc.0\\ontimize-web-ngx\\dist\\ontimize-web-ngx-4.0.0-rc.0.tgz",
+    "ontimize-web-ngx-theming": "file:C:\\workspace\\github\\THEMING\\ontimize-web-ng2-theming\\dist\\ontimize-web-ngx-theming-4.0.0.tgz"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.7.0",
-    "@ngtools/webpack": "6.1.5",
-    "@angular/cli": "6.2.5",
+    "@angular-devkit/build-angular": "0.8.6",
+    "@angular/cli": "6.2.6",
     "@angular/compiler-cli": "6.1.10",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
     "compression-webpack-plugin": "1.1.12",
-    "html-webpack-plugin": "3.2.0",
-    "jasmine-spec-reporter": "~3.2.0",
-    "node-sass": "4.7.2",
-    "ontimize-web-ngx-tools": "1.0.6",
+    "copy-webpack-plugin": "4.5.4",
+    "html-webpack-plugin": "4.0.0-beta.2",
+    "node-sass": "4.9.4",
+    "ontimize-web-ngx-tools": "file:C:\\workspace\\github\\TOOLS\\ontimize-web-ngx-tools\\ontimize-web-ngx-tools-2.0.0.tgz",
     "ts-node": "~2.0.0",
     "typescript": "2.9.2",
-    "webpack": "4.17.2"
+    "webpack": "4.18.0",
+    "webpack-cli": "3.1.0"
   }
 }
