@@ -10,7 +10,6 @@ var helpers = require("./helpers");
 module.exports = {
   mode: "production",
   devtool: "nosources-source-map",
-  // devtool: "source-map",
 
   entry: {
     main: helpers.root("tmp-src/main.ts"),
