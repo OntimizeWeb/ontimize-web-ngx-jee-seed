@@ -47,6 +47,7 @@
     "html-webpack-plugin": "4.0.0-beta.2",
     "node-sass": "4.9.4",
     "ontimize-web-ngx-tools": "4.0.0-rc.0",
+    "tar": "4.4.2",
     "ts-node": "~2.0.0",
     "typescript": "2.9.2",
     "webpack": "4.18.0",
