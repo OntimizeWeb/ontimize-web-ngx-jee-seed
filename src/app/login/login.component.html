@@ -1,0 +1,32 @@
+<div fxLayout="row" fxFill fxLayoutAlign="center center" class="login-outer-container">
+
+  <div fxLayout="column" fxLayoutAlign="center" class="login-inner-container mat-elevation-z1">
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div fxLayout="column" fxLayoutAlign="center center" class="logo-container mat-elevation-z4">
+        <img src="./assets/images/ontimize.png">
+      </div>
+
+      <p class="session-expired" *ngIf="sessionExpired">{{ 'ERROR_SESSION_EXPIRED' | oTranslate }}</p>
+
+      <mat-form-field style="width:100%;">
+        <input matInput class="mat-input" #user placeholder="{{ 'USERNAME' | oTranslate }}" id="username" formControlName="username">
+      </mat-form-field>
+
+      <mat-form-field style="width:100%;">
+        <input matInput class="mat-input" #password placeholder="{{ 'PASSWORD' | oTranslate }}" id="password" type="password" formControlName="password">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">{{ 'LOGIN' | oTranslate }}</button>
+      <div layout-padding></div>
+      <div layout-padding></div>
+      <div fxLayout="column" fxLayoutAlign="center center" layout-padding>
+        <span class="title_text">{{ 'EXAMPLE_LOGIN_INFO' | oTranslate }}:</span>
+        <span class="dark_text">{{ 'USERNAME' | oTranslate }} : demo</span>
+        <span class="dark_text">{{ 'PASSWORD' | oTranslate }} : demouser</span>
+      </div>
+    </form>
+
+  </div>
+
+</div>

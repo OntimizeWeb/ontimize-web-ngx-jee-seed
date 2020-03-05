@@ -21,12 +21,22 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/ontimize-web-ngx/assets",
+                "output": "/assets"
+              }
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/ontimize-web-ngx/ontimize.scss",
+              "src/assets/css/app.scss",
+              "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/domchange.js",
+              "src/assets/js/keyboard.js"
+            ]
           },
           "configurations": {
             "production": {
