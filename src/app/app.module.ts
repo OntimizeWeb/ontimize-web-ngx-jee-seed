@@ -5,20 +5,27 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CONFIG } from './app.config';
 
+// Standard providers...
+// Defining custom providers (if needed)...
+export const customProviders: any = [
+];
+
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     ONTIMIZE_MODULES,
     OntimizeWebModule,
     AppRoutingModule
   ],
+  declarations: [
+    AppComponent
+  ],
+  bootstrap: [
+    AppComponent
+  ],
   providers: [
     { provide: APP_CONFIG, useValue: CONFIG },
-    ...ONTIMIZE_PROVIDERS
+    ...ONTIMIZE_PROVIDERS,
+    ...customProviders
   ],
-  bootstrap: [AppComponent]
 })
-
 export class AppModule { }
