@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardService } from 'ontimize-web-ngx';
 
-import { MainComponent } from './main.component';
 import { HomeModule } from './home/home.module';
+import { MainComponent } from './main.component';
 
 export function loadHomeModule() {
   return HomeModule;
