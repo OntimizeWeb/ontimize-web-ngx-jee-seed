@@ -46,6 +46,7 @@
     "compression-webpack-plugin": "1.1.12",
     "copy-webpack-plugin": "4.5.4",
     "fstream": "1.0.12",
+    "handlebars": "4.7.3",
     "html-webpack-plugin": "4.0.0-beta.2",
     "lodash": "4.17.13",
     "lodash.mergewith": "4.6.2",
