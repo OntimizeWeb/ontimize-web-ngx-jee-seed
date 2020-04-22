@@ -60,11 +60,11 @@ Now, we have to declare if they are static or not:
 
 Before
 
-`@ViewChild('Test')`
+`@ViewChild('test')`
 
 Now
 
-`@ViewChild('atsistemasDiv', { static: true })`
+`@ViewChild('test', { static: true })`
 
 
 
