@@ -34,6 +34,11 @@ Follow this steps:
 `rm package-lock.json`
 `npm i`
 
+### Required Versions
+
+- NPM: 6.10.3
+- Node: 12.10.0
+- Rxjs: 6.4.0
 
 ### Update all your angular packages to version 8.
 
@@ -41,11 +46,11 @@ Follow this steps:
 
 ### Install ontimize-web-ngx@8.x.x
 
-- Set OntimizeWebNgx tgz file in your package.json
+- Set OntimizeWebNgx latest version in your package.json
 
-`"ontimize-web-ngx":"file:ontimize-web-ngx-8.0.0.tgz"`
+`"ontimize-web-ngx":"file:ontimize-web-ngx-8.0.0.tgz"` or `"ontimize-web-ngx":"8.0.0"`
 
-- Install the package
+- Install the packages
 
 `npm install`
 
@@ -54,7 +59,8 @@ Follow this steps:
 `ng serve`
 
 
-### Changes in ViewChild / ContentChild
+
+### Changes in ViewChild / ContentChild in Angular 8
 
 Now, we have to declare if they are static or not:
 
