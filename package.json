@@ -10,6 +10,9 @@
     "production-aot": "ontimize-web-ngx production-aot --project-name ontimize-web-ngx-jee-seed --href /ontimize-web-ngx-jee-seed/"
   },
   "private": true,
+  "engines": {
+    "node": ">=8.0.0 <11.0.0"
+  },
   "dependencies": {
     "@angular/flex-layout": "6.0.0-beta.18",
     "@angular/material": "6.4.7",
