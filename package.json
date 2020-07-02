@@ -11,6 +11,9 @@
     "production": "ng build --prod=true --baseHref=/ontimize-web-ngx-jee-seed/"
   },
   "private": true,
+  "engines": {
+    "node": "^12"
+  },
   "dependencies": {
     "@angular/animations": "~8.2.14",
     "@angular/cdk": "^8.2.3",
