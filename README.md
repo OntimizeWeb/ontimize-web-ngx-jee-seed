@@ -4,8 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Requirements
 
-- Node: > 12.0.0
-- NPM: > 6.4.0
+- Node: 12.x.x
 
 ## Install
 
