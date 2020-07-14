@@ -4,7 +4,7 @@ This is a basic application built with [Ontimize Web](https://ontimizeweb.github
 
 ## Requirements
 
-- Node: higher than version 8.0.0 and lower than version 11.0.0
+- Node: > 8.x.x < 11.x.x
 
 ## Install
 
