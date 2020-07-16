@@ -35,7 +35,7 @@
     "rxjs": "6.3.3",
     "zone.js": "0.8.26",
     "reflect-metadata": "0.1.12",
-    "ontimize-web-ngx": "4.0.7",
+    "ontimize-web-ngx": "4.1.2",
     "ontimize-web-ngx-theming": "4.0.2"
   },
   "devDependencies": {
