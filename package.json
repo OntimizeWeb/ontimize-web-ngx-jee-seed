@@ -35,7 +35,7 @@
     "rxjs": "6.3.3",
     "zone.js": "0.8.26",
     "reflect-metadata": "0.1.12",
-    "ontimize-web-ngx": "4.1.2",
+    "ontimize-web-ngx": "4.1.3",
     "ontimize-web-ngx-theming": "4.0.2"
   },
   "devDependencies": {
@@ -52,7 +52,7 @@
     "handlebars": "4.7.3",
     "html-webpack-plugin": "4.0.0-beta.2",
     "kind-of": "6.0.3",
-    "lodash": "4.17.13",
+    "lodash": "4.17.19",
     "lodash.mergewith": "4.6.2",
     "minimist": "1.2.5",
     "mixin-deep": "1.3.2",
