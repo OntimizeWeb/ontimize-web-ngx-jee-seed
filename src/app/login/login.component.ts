@@ -1,7 +1,7 @@
-import { Component, Inject, Injector, NgZone, OnInit } from '@angular/core';
+import { Component, Inject, Injector, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { LoginService, NavigationService } from 'ontimize-web-ngx';
+import { AuthService, NavigationService } from 'ontimize-web-ngx';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -16,18 +16,13 @@ export class LoginComponent implements OnInit {
   password: FormControl;
   sessionExpired = false;
 
-  router: Router;
-
   constructor(
     private actRoute: ActivatedRoute,
-    private zone: NgZone,
-    router: Router,
+    private router: Router,
     @Inject(NavigationService) public navigation: NavigationService,
-    @Inject(LoginService) private loginService: LoginService,
-    public injector: Injector) {
-
-    this.router = router;
-
+    @Inject(AuthService) private authService: AuthService,
+    public injector: Injector
+  ) {
     const qParamObs: Observable<any> = this.actRoute.queryParams;
     qParamObs.subscribe(params => {
       if (params) {
@@ -43,7 +38,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): any {
-    this.loginService.sessionExpired();
+    this.authService.clearSessionData();
     this.navigation.setVisible(false);
 
     const userCtrl: FormControl = new FormControl('', Validators.required);
@@ -53,7 +48,7 @@ export class LoginComponent implements OnInit {
     this.loginForm.addControl('username', userCtrl);
     this.loginForm.addControl('password', pwdCtrl);
 
-    if (this.loginService.isLoggedIn()) {
+    if (this.authService.isLoggedIn()) {
       this.router.navigate(['../'], { relativeTo: this.actRoute });
     }
   }
@@ -67,7 +62,7 @@ export class LoginComponent implements OnInit {
     const password = this.loginForm.value['password'];
     if (userName && userName.length > 0 && password && password.length > 0) {
       const self = this;
-      this.loginService.login(userName, password).subscribe(() => {
+      this.authService.login(userName, password).subscribe(() => {
         self.sessionExpired = false;
         self.router.navigate(['../'], { relativeTo: this.actRoute });
       }, this.handleError);
@@ -82,4 +77,5 @@ export class LoginComponent implements OnInit {
       default: break;
     }
   }
+
 }
