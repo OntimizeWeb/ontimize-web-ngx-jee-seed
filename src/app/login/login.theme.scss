@@ -9,16 +9,41 @@
   .login-outer-container {
     background-color: mat-color($background, background);
 
-    .login-inner-container {
+    .wrapp-login {
       background-color: mat-color($background, dialog);
 
-      .logo-container {
+      .login-inner-container {
         background-color: mat-color($background, dialog);
+
+        .logo-container {
+          background-color: mat-color($background, dialog);
+        }
+
+        .session-expired {
+          color: #f44336;
+        }
+
+        .login_info,
+        .title_text {
+          color: mat-color($foreground, text);
+        }
+
+        .link_text {
+          color: mat-color($primary);
+        }
       }
 
-      .session-expired {
-        color: #f44336;
+    }
+  }
+
+  .footer-container {
+    background-color: mat-color($primary);
+
+    div {
+      span {
+        color: white;
       }
     }
   }
+
 }
