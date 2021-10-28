@@ -16,7 +16,7 @@
           <div fxLayout="column" fxLayoutGap="10px">
             <mat-form-field fxFill class="m-top-24">
               <input matInput class="mat-input" #user placeholder="{{ 'USERNAME' | oTranslate }}" id="username" [formControl]="userCtrl">
-              <mat-error *ngIf="userCtrl.hasError()">
+              <mat-error *ngIf="userCtrl.hasError('required')">
                 {{ 'ERROR_USER_REQUIRED' | oTranslate }}
               </mat-error>
             </mat-form-field>
