@@ -1,5 +1,5 @@
 (function (window) {
-    var last = +new Date();
+    var lastDate = +new Date();
     var delay = 100; // default delay
 
     // Manage event queue
@@ -11,7 +11,7 @@
             for (var i = 0; i < stack.length; i++) {
                 stack[i]();
             }
-            last = now;
+            lastDate = now;
         }
     }
 
@@ -26,7 +26,7 @@
 
         var last = document.getElementsByTagName('*');
         var lastlen = last.length;
-        var timer = setTimeout(function check() {
+        setTimeout(function check() {
 
             // get current state of the document
             var current = document.getElementsByTagName('*');
