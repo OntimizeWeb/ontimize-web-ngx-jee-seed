@@ -1,5 +1,5 @@
 (function (window) {
-    var lastDate = +new Date();
+    var last = +new Date();
     var delay = 100; // default delay
 
     // Manage event queue
@@ -11,7 +11,7 @@
             for (var i = 0; i < stack.length; i++) {
                 stack[i]();
             }
-            lastDate = now;
+            last = now;
         }
     }
 
