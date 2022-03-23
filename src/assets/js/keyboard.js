@@ -11,7 +11,7 @@ function __triggerKeyboardEvent(el, keyCode) {
 
   el.dispatchEvent ? el.dispatchEvent(eventObj) : el.fireEvent("onkeydown", eventObj);
 
-};
+}
 
 
 onDomChange(function () {

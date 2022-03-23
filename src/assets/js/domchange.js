@@ -26,7 +26,7 @@
 
         var last = document.getElementsByTagName('*');
         var lastlen = last.length;
-        var timer = setTimeout(function check() {
+        setTimeout(function check() {
 
             // get current state of the document
             var current = document.getElementsByTagName('*');
