@@ -1,3 +1,6 @@
+/*Import the file who have the theme functions and the ontimize-theme-styles mixin.*/
+@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
+
 // ******* @angular/material predefined themes. *******
 // Choose one of the following imports
 // @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss';
@@ -7,7 +10,6 @@
 @import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
 
 // Include ontimize theme
-@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
 @include ontimize-theme-styles($theme);
 // Include ontimize-lite theme
 // @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme-lite.scss';
