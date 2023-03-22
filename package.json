@@ -1,6 +1,6 @@
 {
   "name": "ontimize-web-ngx-jee-seed",
-  "version": "8.4.0",
+  "version": "8.5.0-SNAPSHOT-0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4299",
@@ -33,9 +33,9 @@
     "@angular/upgrade": "^8.2.14",
     "core-js": "^3.6.4",
     "ngx-material-timepicker": "5.4.3",
-    "ontimize-web-ngx": "8.8.0",
-    "ontimize-web-ngx-theming": "8.4.0",
-    "ontimize-web-ngx-report": "8.0.2",
+    "ontimize-web-ngx": "8.11.1",
+    "ontimize-web-ngx-theming": "8.5.1",
+    "ontimize-web-ngx-report": "8.1.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
