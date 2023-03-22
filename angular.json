@@ -29,7 +29,7 @@
               },
               {
                 "glob": "**/*",
-                "input": "node_modules/ngx-extended-pdf-viewer/assets",
+                "input": "node_modules/ontimize-web-ngx-report/assets",
                 "output": "/assets"
               },
               "src/manifest.webmanifest"
