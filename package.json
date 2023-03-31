@@ -32,7 +32,7 @@
     "ontimize-web-ngx": "C:/work/ontimize web/15.x.x/ontimize-web-ngx/dist/ontimize-web-ngx-10.0.0.tgz",
     "ontimize-web-ngx-theming": "C:/work/ontimize web/15.x.x/ontimize-web-ngx-theming/dist/ontimize-web-ngx-theming-10.0.0.tgz",
     "rxjs": "~6.5.4",
-    "tslib": "^1.10.0",
+    "tslib": "2.0.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
