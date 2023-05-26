@@ -1,6 +1,6 @@
 {
   "name": "ontimize-web-ngx-jee-seed",
-  "version": "12.0.0",
+  "version": "11.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4299",
@@ -29,8 +29,8 @@
     "@angular/pwa": "~0.901.15",
     "@angular/router": "~11.2.14",
     "@angular/service-worker": "~11.2.14",
-    "ontimize-web-ngx": "C:/work/ontimize web/15.x.x/ontimize-web-ngx/dist/ontimize-web-ngx-10.0.0.tgz",
-    "ontimize-web-ngx-theming": "C:/work/ontimize web/15.x.x/ontimize-web-ngx-theming/dist/ontimize-web-ngx-theming-10.0.0.tgz",
+    "ontimize-web-ngx": "C:/work/ontimize web/15.x.x/ontimize-web-ngx/dist/ontimize-web-ngx-11.0.0.tgz",
+    "ontimize-web-ngx-theming": "C:/work/ontimize web/15.x.x/ontimize-web-ngx-theming/dist/ontimize-web-ngx-theming-11.0.0.tgz",
     "rxjs": "~6.5.4",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
