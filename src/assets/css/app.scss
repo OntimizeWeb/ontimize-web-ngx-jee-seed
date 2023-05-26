@@ -1,24 +1,23 @@
 // ******* @angular/material predefined themes. *******
-// Choose one of the following imports
-// @use 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss';
-// @use 'node_modules/ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss';
-// @use 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss';
-// @use 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';
-@use 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
+// Choose one of the following theme
+//@use 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss' as theme;
+//@use 'node_modules/ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss' as theme;
+//@use 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss'as theme;
+//@use 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss' as theme;
+@use 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss'as theme;
 @use 'ontimize-web-ngx-theming/ontimize-theme.scss';
 @use 'ontimize-web-ngx/theme.scss'as ontimize-web-ngx-theme;
+//@use 'ontimize-web-ngx-theming/ontimize-theme-lite.scss';
 @use '../../app/login/login.theme.scss'as login;
 
 // Include ontimize theme
-@include ontimize-theme.ontimize-theme-styles(ontimize.$theme);
+@include ontimize-theme.ontimize-theme-styles(theme.$theme);
 
 // Include ontimize-lite theme
-// @use 'node_modules/ontimize-web-ngx-theming/ontimize-theme-lite.scss';
-// @include ontimize-theme-styles-lite($theme, ontimize-theme-lite.$typography);
+//@include ontimize-theme-lite.ontimize-theme-styles-lite(theme.$theme, ontimize-theme-lite.$typography);
 
 // After define theme, it is necessary to transfer color and typography to Ontimize Web framework
-@include ontimize-web-ngx-theme.o-material-theme(ontimize.$theme, ontimize-theme.$typography);
+@include ontimize-web-ngx-theme.o-material-theme(theme.$theme, ontimize-theme.$typography);
 
 // Propagate theme to screen styles definition.
-
-@include login.login-theme(ontimize.$theme);
+@include login.login-theme(theme.$theme);
