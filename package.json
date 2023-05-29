@@ -1,6 +1,6 @@
 {
   "name": "ontimize-web-ngx-jee-seed",
-  "version": "11.0.0",
+  "version": "12.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4299",
@@ -8,37 +8,37 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "production": "ng build --prod=true --baseHref=/ontimize-web-ngx-jee-seed/"
+    "production": "ng build --configuration production=true --baseHref=/ontimize-web-ngx-jee-seed/"
   },
   "private": true,
   "engines": {
     "node": ">=14.20.0 < 16.13.0"
   },
   "dependencies": {
-    "@angular/animations": "~11.2.14",
-    "@angular/cdk": "^11.2.13",
-    "@angular/common": "~11.2.14",
-    "@angular/compiler": "~11.2.14",
-    "@angular/core": "~11.2.14",
-    "@angular/flex-layout": "^11.0.0-beta.33",
-    "@angular/forms": "~11.2.14",
-    "@angular/material": "^11.2.13",
-    "@angular/material-moment-adapter": "^11.2.13",
-    "@angular/platform-browser": "~11.2.14",
-    "@angular/platform-browser-dynamic": "~11.2.14",
+    "@angular/animations": "~12.2.17",
+    "@angular/cdk": "^12.2.13",
+    "@angular/common": "~12.2.17",
+    "@angular/compiler": "~12.2.17",
+    "@angular/core": "~12.2.17",
+    "@angular/flex-layout": "^12.0.0-beta.34",
+    "@angular/forms": "~12.2.17",
+    "@angular/material": "^12.2.13",
+    "@angular/material-moment-adapter": "^12.2.13",
+    "@angular/platform-browser": "~12.2.17",
+    "@angular/platform-browser-dynamic": "~12.2.17",
     "@angular/pwa": "~0.901.15",
-    "@angular/router": "~11.2.14",
-    "@angular/service-worker": "~11.2.14",
-    "ontimize-web-ngx": "C:/work/ontimize web/15.x.x/ontimize-web-ngx/dist/ontimize-web-ngx-11.0.0.tgz",
-    "ontimize-web-ngx-theming": "C:/work/ontimize web/15.x.x/ontimize-web-ngx-theming/dist/ontimize-web-ngx-theming-11.0.0.tgz",
+    "@angular/router": "~12.2.17",
+    "@angular/service-worker": "~12.2.17",
+    "ontimize-web-ngx": "C:/work/ontimize web/15.x.x/ontimize-web-ngx/dist/ontimize-web-ngx-12.0.0.tgz",
+    "ontimize-web-ngx-theming": "C:/work/ontimize web/15.x.x/ontimize-web-ngx-theming/dist/ontimize-web-ngx-theming-12.0.0.tgz",
     "rxjs": "~6.5.4",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1102.19",
-    "@angular/cli": "~11.2.19",
-    "@angular/compiler-cli": "~11.2.14",
+    "@angular-devkit/build-angular": "~12.2.18",
+    "@angular/cli": "~12.2.18",
+    "@angular/compiler-cli": "~12.2.17",
     "@types/node": "^12.11.1",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",
@@ -53,6 +53,6 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~4.0.8"
+    "typescript": "~4.3.5"
   }
 }
