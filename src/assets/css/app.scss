@@ -1,10 +1,10 @@
 // ******* @angular/material predefined themes. *******
 // Choose one of the following theme
-//@use 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss' as theme;
-//@use 'node_modules/ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss' as theme;
-//@use 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss'as theme;
-//@use 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss' as theme;
-@use 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss'as theme;
+//@use 'ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss' as theme;
+//@use 'ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss' as theme;
+//@use 'ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss'as theme;
+//@use 'ontimize-web-ngx-theming/src/themes/mat-purple-green.scss' as theme;
+@use 'ontimize-web-ngx-theming/src/themes/ontimize.scss'as theme;
 @use 'ontimize-web-ngx-theming/ontimize-theme.scss';
 @use 'ontimize-web-ngx/theme.scss'as ontimize-web-ngx-theme;
 //@use 'ontimize-web-ngx-theming/ontimize-theme-lite.scss';
