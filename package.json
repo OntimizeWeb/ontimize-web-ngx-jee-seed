@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "production": "ng build --configuration production=true --baseHref=/ontimize-web-ngx-jee-seed/"
+    "production": "ng build --configuration production --baseHref=/ontimize-web-ngx-jee-seed/"
   },
   "private": true,
   "engines": {
