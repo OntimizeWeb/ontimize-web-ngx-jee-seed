@@ -5,10 +5,10 @@
     "ng": "ng",
     "start": "ng serve --port 4299",
     "build": "ng build",
+    "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "production": "ng build --configuration production --baseHref=/ontimize-web-ngx-jee-seed/"
+    "production": "ng build --baseHref=/ontimize-web-ngx-jee-seed/"
   },
   "private": true,
   "engines": {

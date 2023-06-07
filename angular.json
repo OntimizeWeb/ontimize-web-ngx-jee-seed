@@ -46,13 +46,7 @@
             "scripts": [
               "src/assets/js/domchange.js",
               "src/assets/js/keyboard.js"
-            ],
-            "vendorChunk": true,
-            "extractLicenses": false,
-            "buildOptimizer": false,
-            "sourceMap": true,
-            "optimization": false,
-            "namedChunks": true
+            ]
           },
           "configurations": {
             "production": {
@@ -62,30 +56,19 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ],
               "serviceWorker": true,
               "ngswConfigPath": "ngsw-config.json"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
           },
-          "defaultConfiguration": ""
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -94,9 +77,13 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "ontimize-web-ngx-jee-seed:build:production"
+              "browserTarget": "myapp:build:production"
+            },
+            "development": {
+              "browserTarget": "myapp:build:development"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -120,18 +107,6 @@
               "src/styles.css"
             ],
             "scripts": []
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ontimize-web-ngx-jee-seed:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "ontimize-web-ngx-jee-seed:serve:production"
-            }
           }
         }
       }
