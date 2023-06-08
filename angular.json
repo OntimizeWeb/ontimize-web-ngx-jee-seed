@@ -133,9 +133,21 @@
               "devServerTarget": "ontimize-web-ngx-jee-seed:serve:production"
             }
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "ontimize-web-ngx-jee-seed"
+  "defaultProject": "ontimize-web-ngx-jee-seed",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
