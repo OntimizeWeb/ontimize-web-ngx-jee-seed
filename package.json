@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "production": "ng build --baseHref=/ontimize-web-ngx-jee-seed/"
+    "production": "ng build --base-href=/ontimize-web-ngx-jee-seed/"
   },
   "private": true,
   "engines": {
