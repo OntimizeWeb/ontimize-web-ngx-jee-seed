@@ -146,8 +146,9 @@
       }
     }
   },
-  "defaultProject": "ontimize-web-ngx-jee-seed",
   "cli": {
-    "defaultCollection": "@angular-eslint/schematics"
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }
