@@ -46,6 +46,10 @@
             "scripts": [
               "src/assets/js/domchange.js",
               "src/assets/js/keyboard.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "google-libphonenumber",
+              "moment"
             ]
           },
           "configurations": {
@@ -146,8 +150,9 @@
       }
     }
   },
-  "defaultProject": "ontimize-web-ngx-jee-seed",
   "cli": {
-    "defaultCollection": "@angular-eslint/schematics"
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }
