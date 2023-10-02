@@ -1,13 +1,13 @@
 // ******* @angular/material predefined themes. *******
 // Choose one of the following theme
-//@use 'ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss' as theme;
-//@use 'ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss' as theme;
-//@use 'ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss'as theme;
-//@use 'ontimize-web-ngx-theming/src/themes/mat-purple-green.scss' as theme;
-@use 'ontimize-web-ngx-theming/src/themes/ontimize.scss'as theme;
-@use 'ontimize-web-ngx-theming/ontimize-theme.scss';
+//@use 'ontimize-web-ngx/theming/themes/mat-indigo-pink.scss' as theme;
+//@use 'ontimize-web-ngx/theming/themes/mat-deeppurple-amber.scss' as theme;
+//@use 'ontimize-web-ngx/theming/themes/mat-pink-bluegrey.scss'as theme;
+//@use 'ontimize-web-ngx/theming/themes/mat-purple-green.scss' as theme;
+@use 'ontimize-web-ngx/theming/themes/ontimize.scss'as theme;
+@use 'ontimize-web-ngx/theming/ontimize-theme.scss';
 @use 'ontimize-web-ngx/theme.scss'as ontimize-web-ngx-theme;
-//@use 'ontimize-web-ngx-theming/ontimize-theme-lite.scss';
+//@use 'ontimize-web-ngx/theming/ontimize-theme-lite.scss';
 @use '../../app/login/login.theme.scss'as login;
 
 // Include ontimize theme
