@@ -1,23 +1,16 @@
-// ******* @angular/material predefined themes. *******
-// Choose one of the following theme
-//@use 'ontimize-web-ngx/theming/themes/mat-indigo-pink.scss' as theme;
-//@use 'ontimize-web-ngx/theming/themes/mat-deeppurple-amber.scss' as theme;
-//@use 'ontimize-web-ngx/theming/themes/mat-pink-bluegrey.scss'as theme;
-//@use 'ontimize-web-ngx/theming/themes/mat-purple-green.scss' as theme;
+// Define your custom theme or choose predefined theme
 @use 'ontimize-web-ngx/theming/themes/ontimize.scss'as theme;
-@use 'ontimize-web-ngx/theming/ontimize-theme.scss';
-@use 'ontimize-web-ngx/theme.scss'as ontimize-web-ngx-theme;
-//@use 'ontimize-web-ngx/theming/ontimize-theme-lite.scss';
+@use 'ontimize-web-ngx/theming/ontimize-style.scss';
 @use '../../app/login/login.theme.scss'as login;
 
-// Include ontimize theme
-@include ontimize-theme.ontimize-theme-styles(theme.$theme);
-
-// Include ontimize-lite theme
-//@include ontimize-theme-lite.ontimize-theme-styles-lite(theme.$theme, ontimize-theme-lite.$typography);
-
-// After define theme, it is necessary to transfer color and typography to Ontimize Web framework
-@include ontimize-web-ngx-theme.o-material-theme(theme.$theme, ontimize-theme.$typography);
+// Include ontimize styles
+@include ontimize-style.ontimize-theme-styles(theme.$theme);
 
 // Propagate theme to screen styles definition.
 @include login.login-theme(theme.$theme);
+
+
+//Include dark styles option
+.o-dark {
+  @include ontimize-style.ontimize-theme-all-component-color(theme.$dark-theme);
+}
