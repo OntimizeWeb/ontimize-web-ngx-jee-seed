@@ -62,7 +62,7 @@
     "karma-jasmine-html-reporter": "^1.4.0",
     "kind-of": "6.0.3",
     "log4js": ">=6.4.0",
-    "minimist": "1.2.5",
+    "minimist": "1.2.6",
     "moment": "^2.22.2",
     "node-forge": ">=1.0.0",
     "protractor": "~7.0.0",
