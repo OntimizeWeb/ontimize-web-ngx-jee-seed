@@ -13,7 +13,7 @@
  *
  * Learn more in https://angular.io/guide/browser-support
  */
-import 'zone.js/dist/zone';
+import 'zone.js';
 
 
 /***************************************************************************************************
