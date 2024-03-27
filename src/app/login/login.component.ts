@@ -1,5 +1,5 @@
 import { Component, Inject, Injector, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService, LocalStorageService, NavigationService } from 'ontimize-web-ngx';
 import { Observable } from 'rxjs';
@@ -12,9 +12,9 @@ import { Observable } from 'rxjs';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm: FormGroup = new FormGroup({});
-  userCtrl: FormControl = new FormControl('', Validators.required);
-  pwdCtrl: FormControl = new FormControl('', Validators.required);
+  loginForm: UntypedFormGroup = new UntypedFormGroup({});
+  userCtrl: UntypedFormControl = new UntypedFormControl('', Validators.required);
+  pwdCtrl: UntypedFormControl = new UntypedFormControl('', Validators.required);
   sessionExpired = false;
 
   router: Router;

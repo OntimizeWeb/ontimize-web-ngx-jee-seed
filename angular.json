@@ -130,6 +130,6 @@
           }
         }
       }
-    }},
-  "defaultProject": "ontimize-web-ngx-jee-seed"
+    }
+  }
 }
