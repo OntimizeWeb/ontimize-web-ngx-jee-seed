@@ -1,7 +1,7 @@
 // Define your custom theme or choose predefined theme
-@use 'ontimize-web-ngx/theming/themes/ontimize.scss' as theme;
+@use 'ontimize-web-ngx/theming/themes/ontimize.scss'as theme;
 @use 'ontimize-web-ngx/theming/ontimize-style.scss';
-@use '../../app/login/login.theme.scss' as login;
+@use '../../app/login/login.theme.scss'as login;
 
 // Include ontimize styles
 @include ontimize-style.ontimize-theme-styles(theme.$theme);
