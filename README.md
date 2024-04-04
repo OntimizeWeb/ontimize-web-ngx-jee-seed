@@ -1,10 +1,10 @@
 # OntimizeWebNgx JEE Seed
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.6.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.9.
 
 ## Requirements
 
-- Node: 12.x.x
+- Node: 18.10.0
 
 ## Install
 

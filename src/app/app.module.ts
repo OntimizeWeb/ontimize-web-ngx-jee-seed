@@ -6,6 +6,8 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CONFIG } from './app.config';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Standard providers...
 // Defining custom providers (if needed)...
@@ -14,6 +16,8 @@ export const customProviders: any = [
 
 @NgModule({
   imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
     OntimizeWebModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
