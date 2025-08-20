@@ -1,6 +1,6 @@
 {
   "name": "ontimize-web-ngx-jee-seed",
-  "version": "15.1.0-SNAPSHOT-0",
+  "version": "15.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4299",
@@ -30,7 +30,7 @@
     "@angular/router": "^15.2.10",
     "@angular/service-worker": "^15.2.10",
     "@angular/upgrade": "^15.2.10",
-    "ontimize-web-ngx": "15.0.3",
+    "ontimize-web-ngx": "15.6.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
